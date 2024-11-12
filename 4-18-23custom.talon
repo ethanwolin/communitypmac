@@ -82,3 +82,7 @@ mid click:
 	sleep(100ms)
 	key(ctrl-tab)
 
+savor: key(cmd-s)
+
+paster: key(cmd-v)
+
