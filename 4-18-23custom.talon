@@ -11,9 +11,6 @@ sink: user.mouse_cardinal_move_1d('down', 10)
 lop: user.mouse_cardinal_move_1d('left', 10)
 jig: user.mouse_cardinal_move_1d('right', 10)
 
-nip: user.mouse_scroll_down()
-flip: user.mouse_scroll_up()
-
 #kj grid customizations
 shock: 
 	mouse_click(0)
@@ -26,23 +23,14 @@ reset: user.grid_reset()
 
 #hover
 hover seven: mouse_move(240,150)
-
 hover eight: mouse_move(720,150)
-
 hover nine: mouse_move(1200,150)
-
 hover for | hover four: mouse_move(240,450)
-
 hover five: mouse_move(720,450)
-
 hover six: mouse_move(1200,450)
-
 hover one: mouse_move(240,750)
-
 hover to | hover two: mouse_move(720,750)
-
 hover three: mouse_move(1200,750)
-
 center: 
 	mouse_move(720,450)
 	mouse_click(0)
@@ -75,14 +63,28 @@ sleeper: speech.disable()
 scroll: user.mouse_scroll_down()
 rise: user.mouse_scroll_up()
 
-mid click: 
-	mouse_click(2)
-    # close the mouse grid
-    user.grid_close()
+#mid click: 
+#	mouse_click(2)
+#    # close the mouse grid
+#    user.grid_close()
+#	sleep(100ms)
+#	key(ctrl-tab)
+
+command click: 
+	key(cmd-shift:down)
+	sleep(50ms)
+	mouse_click(0)
 	sleep(100ms)
-	key(ctrl-tab)
+	key(cmd-shift:up)
 
 savor: key(cmd-s)
-
 paster: key(cmd-v)
+grabber: 
+	mouse_click()
+	mouse_click()
+	edit.copy()
+
+#hiss mode: user.mouse_enable_hiss_scroll = true
+#no hissing: user.mouse_enable_hiss_scroll = false
+
 
