@@ -40,13 +40,13 @@ key(f7): speech.disable()
 
 strum: 
 	edit.page_down()
-	sleep(500ms)
+	sleep(100ms)
 	user.mouse_scroll_up()
 	user.mouse_scroll_up()
 
 scar: key(capslock)
 
-shake: key(command-tab)
+shake: key(cmd-tab)
 
 hang: key(f8)
 
@@ -87,4 +87,16 @@ grabber:
 #hiss mode: user.mouse_enable_hiss_scroll = true
 #no hissing: user.mouse_enable_hiss_scroll = false
 
+clipper: 
+	key(cmd-shift-v)
+	key(down)
+	key(right)
+
+clip previous:
+	key(cmd-shift-v)
+	key(down)
+	key(right)
+	key(down)
+
+linkedin url: insert("https://www.linkedin.com/in/ethan-wolin-65017b153/")
 

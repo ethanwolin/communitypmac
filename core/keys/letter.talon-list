@@ -4,7 +4,7 @@ list: user.letter
 # https://talon.wiki/quickstart/improving_recognition_accuracy/#collected-alternatives-to-the-default-alphabet
 air: a
 bat: b
-cap: c
+crab: c
 drum: d
 each: e
 fine: f

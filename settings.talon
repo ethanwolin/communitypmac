@@ -22,7 +22,7 @@ settings():
     # user.help_sort_contexts_by_specificity = false
 
     # Set the scroll amount for continuous scroll/gaze scroll
-    user.mouse_continuous_scroll_amount = 40
+    user.mouse_continuous_scroll_amount = 120
 
     # If `true`, stop continuous scroll/gaze scroll with a pop
     user.mouse_enable_pop_stops_scroll = true
@@ -61,8 +61,8 @@ settings():
     user.command_history_size = 50
 
     # Set the time window size for to for pop_twice_to_sleep and pop_twice_to_repeat. By default, the pops must be more than 0.1 seconds apart and less then 0.3 seconds, to reduce false positives
-    user.double_pop_speed_minimum = 0.1
-    user.double_pop_speed_maximum = 0.3
+    user.double_pop_speed_minimum = 0.01
+    user.double_pop_speed_maximum = 0.5
 
     # Uncomment to add a directory (relative to the Talon user dir) with additional
     # .snippet files. Changing this setting requires a restart of Talon.
@@ -103,7 +103,7 @@ settings():
 # Enabling this tag will repeat the last command when two pops are heard within the allotted time window
 # Without this tag noise_trigger_pop is usually associated with pop to click actions
 # Enabling this tag disables other pop to click actions in command mode, including pop to click
-# tag(): user.pop_twice_to_repeat
+tag(): user.pop_twice_to_repeat
 
 # Uncomment the below to enable support for saying numbers without a prefix.
 # By default you need to say "numb one" to write "1". If you uncomment this,
