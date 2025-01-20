@@ -40,7 +40,7 @@ key(f7): speech.disable()
 
 strum: 
 	edit.page_down()
-	sleep(100ms)
+	sleep(300ms)
 	user.mouse_scroll_up()
 	user.mouse_scroll_up()
 
@@ -56,7 +56,7 @@ fire:
 	
 drop: user.full_grid_close()
 
-insert gmail: insert("ethanwolin340@gmail.com")
+gmail: insert("ethanwolin340@gmail.com")
 
 sleeper: speech.disable()
 
