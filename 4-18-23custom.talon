@@ -21,16 +21,8 @@ sling:
 	user.grid_reset()
 reset: user.grid_reset()
 
-#hover
-hover seven: mouse_move(240,150)
-hover eight: mouse_move(720,150)
-hover nine: mouse_move(1200,150)
-hover for | hover four: mouse_move(240,450)
-hover five: mouse_move(720,450)
-hover six: mouse_move(1200,450)
-hover one: mouse_move(240,750)
-hover to | hover two: mouse_move(720,750)
-hover three: mouse_move(1200,750)
+# Voice commands for hover
+hover <user.hover_target>: user.hover_move(user.hover_target)
 center: 
 	mouse_move(720,450)
 	mouse_click(0)
@@ -87,16 +79,12 @@ grabber:
 #hiss mode: user.mouse_enable_hiss_scroll = true
 #no hissing: user.mouse_enable_hiss_scroll = false
 
-clipper: 
-	key(cmd-shift-v)
-	key(down)
-	key(right)
-
-clip previous:
-	key(cmd-shift-v)
-	key(down)
-	key(right)
-	key(down)
-
 linkedin url: insert("https://www.linkedin.com/in/ethan-wolin-65017b153/")
+
+strike:
+	edit.extend_word_left()
+	edit.delete()
+strike right: 
+	edit.extend_word_right()
+	edit.delete()
 
