@@ -1,9 +1,13 @@
 -
+key(f9): sound.set_microphone("System Default")
+key(f10): sound.set_microphone("None")
+
 click: mouse_click(0)
 stop: 
 	user.mouse_drag_end()
 	key(escape)
 junk: key(backspace)
+kite: key(delete)
 
 #mouse guide
 yoke: user.mouse_cardinal_move_1d('up', 10)

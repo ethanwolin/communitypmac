@@ -1,4 +1,5 @@
 list: user.website
+os: mac
 -
 talon home page: http://talonvoice.com
 talon slack: http://talonvoice.slack.com/messages/help
