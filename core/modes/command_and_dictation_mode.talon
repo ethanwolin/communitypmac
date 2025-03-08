@@ -1,7 +1,7 @@
 mode: command
 mode: dictation
 -
-^dictation mode$:
+^(dictation mode|dictate)$:
     mode.disable("sleep")
     mode.disable("command")
     mode.enable("dictation")
@@ -11,7 +11,7 @@ mode: dictation
     mode.disable("sleep")
     mode.disable("dictation")
     mode.enable("command")
-^mixed mode$:
+^(mixed mode|mixer)$:
   mode.disable("sleep")
   mode.enable("dictation")
   mode.enable("command")

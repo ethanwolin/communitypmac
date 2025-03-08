@@ -11,9 +11,9 @@ junk: key(backspace)
 kite: key(delete)
 
 #mouse guide
-yoke: user.mouse_cardinal_move_1d('up', 10)
+lift: user.mouse_cardinal_move_1d('up', 10)
 sink: user.mouse_cardinal_move_1d('down', 10)
-lop: user.mouse_cardinal_move_1d('left', 10)
+slide: user.mouse_cardinal_move_1d('left', 10)
 jig: user.mouse_cardinal_move_1d('right', 10)
 
 #kj grid customizations
