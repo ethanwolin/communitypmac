@@ -1,0 +1,16 @@
+list: user.system_paths
+hostname: MacBook-Air.attlocal.net
+-
+user: /Users/ethanwolin
+desktop: /Users/ethanwolin/Desktop
+desk: /Users/ethanwolin/Desktop
+documents: /Users/ethanwolin/Documents
+docks: /Users/ethanwolin/Documents
+downloads: /Users/ethanwolin/Downloads
+music: /Users/ethanwolin/Music
+pictures: /Users/ethanwolin/Pictures
+videos: /Users/ethanwolin/Videos
+talon home: /Users/ethanwolin/.talon
+talon recordings: /Users/ethanwolin/.talon/recordings
+talon user: /Users/ethanwolin/.talon/user
+home: /Users/ethanwolin
