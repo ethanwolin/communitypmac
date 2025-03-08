@@ -1,4 +1,5 @@
 -
+key(f7): speech.toggle()
 key(f9): sound.set_microphone("System Default")
 key(f10): sound.set_microphone("None")
 
@@ -31,8 +32,8 @@ center:
 	mouse_move(720,450)
 	mouse_click(0)
 	
-key(f5): speech.enable()
-key(f7): speech.disable()
+#key(f5): speech.enable()
+#key(f7): speech.disable()
 
 strum: 
 	edit.page_down()
@@ -92,3 +93,6 @@ strike right:
 	edit.extend_word_right()
 	edit.delete()
 
+cycle: key(cmd-~)
+
+state equals: " = "

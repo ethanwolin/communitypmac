@@ -44,7 +44,7 @@ settings():
 
     # How much time a hiss must last for to be considered a hiss rather than
     # part of speech, in ms
-    user.hiss_scroll_debounce_time = 100
+    user.hiss_scroll_debounce_time = 400
 
     # If `true`, hide the continuous scroll/gaze scroll GUI
     user.mouse_hide_mouse_gui = false
@@ -83,7 +83,7 @@ settings():
     # (capitalize, space) dictation-mode speech by selecting & copying surrounding text
     # before inserting. This can be slow and may not work in some applications. You may
     # wish to enable this on a per-application basis.
-    # user.context_sensitive_dictation = true
+    user.context_sensitive_dictation = true
 
     # Choose how to resize windows moved across physical screens (eg. via `snap next`).
     # Default is 'proportional', which preserves window size : screen size ratio.
