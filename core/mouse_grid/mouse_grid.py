@@ -186,7 +186,7 @@ class MouseSnapNine:
             paint.color = "ff0000ff"
         else:
             paint.color = "000000ff"
-        if self.count >= 2:
+        if self.count >= 3:
             aspect = self.rect.width / self.rect.height
             if aspect >= 1:
                 w = self.screen.width / 3
@@ -229,7 +229,7 @@ class MouseSnapNine:
             self.count += 1
         if move:
             ctrl.mouse_move(*rect.center)
-        if self.count >= 2:
+        if self.count >= 3:
             self.update_screenshot()
         else:
             self.mcanvas.freeze()

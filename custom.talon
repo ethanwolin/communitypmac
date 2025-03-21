@@ -1,3 +1,4 @@
+language: en
 -
 key(f7): speech.toggle()
 key(f9): sound.set_microphone("System Default")
@@ -10,11 +11,24 @@ stop:
 junk: key(backspace)
 kite: key(delete)
 
+undo that: key(cmd-z)
+
 #mouse guide
 lift: user.mouse_cardinal_move_1d('up', 10)
+lifter: user.mouse_cardinal_move_1d('up', 50)
+lift major: user.mouse_cardinal_move_1d('up', 100)
+
 sink: user.mouse_cardinal_move_1d('down', 10)
+sinker: user.mouse_cardinal_move_1d('down', 50)
+sink major: user.mouse_cardinal_move_1d('down', 100)
+
 slide: user.mouse_cardinal_move_1d('left', 10)
+slider: user.mouse_cardinal_move_1d('left', 50)
+slide major: user.mouse_cardinal_move_1d('left', 100)
+
 jig: user.mouse_cardinal_move_1d('right', 10)
+jigger: user.mouse_cardinal_move_1d('right', 50)
+jig major: user.mouse_cardinal_move_1d('right', 100)
 
 #kj grid customizations
 shock: 
@@ -57,8 +71,10 @@ gmail: insert("ethanwolin340@gmail.com")
 
 sleeper: speech.disable()
 
-scroll: user.mouse_scroll_down()
-rise: user.mouse_scroll_up()
+scroll minor: user.mouse_scroll_down()
+scroll: user.mouse_scroll_down(2.0)
+rise minor: user.mouse_scroll_up()
+rise: user.mouse_scroll_up(2.0)
 
 #mid click: 
 #	mouse_click(2)
@@ -96,3 +112,7 @@ strike right:
 cycle: key(cmd-~)
 
 state equals: " = "
+
+comgap: ", "
+
+safari: mimic("focus safari")

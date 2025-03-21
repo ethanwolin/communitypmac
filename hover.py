@@ -1,26 +1,28 @@
-from talon import Module, actions
+from talon import Module, ui, actions
 
 mod = Module()
 
-# Define the hover positions as a dictionary
-hover_positions = {
-    "seven": (240, 150),
-    "eight": (720, 150),
-    "nine": (1200, 150),
-    "four": (240, 450),
-    "five": (720, 450),
-    "six": (1200, 450),
-    "one": (240, 750),
-    "two": (720, 750),
-    "three": (1200, 750),
-}
+def calculate_hover_positions():
+    screen = ui.main_screen()
+    width, height = screen.width, screen.height
 
-@mod.capture(rule="|".join(hover_positions.keys()))
+    positions = {
+        "one": (width / 6, height * 5 / 6),
+        "two": (width / 2, height * 5 / 6),
+        "three": (width * 5 / 6, height * 5 / 6),
+        "four": (width / 6, height / 2),
+        "five": (width / 2, height / 2),
+        "six": (width * 5 / 6, height / 2),
+        "seven": (width / 6, height / 6),
+        "eight": (width / 2, height / 6),
+        "nine": (width * 5 / 6, height / 6),
+    }
+    return positions
+
+hover_positions = calculate_hover_positions()
+
+@mod.capture(rule="one|two|three|four|five|six|seven|eight|nine")
 def hover_target(m) -> str:
-    """
-    Capture for hover targets. Matches keys in hover_positions.
-    Returns the name of the hover target as a string.
-    """
     return m[0]
 
 @mod.action_class
