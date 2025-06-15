@@ -116,3 +116,8 @@ state equals: " = "
 comgap: ", "
 
 safari: mimic("focus safari")
+
+push: key(cmd-right)
+pop: key(cmd-left)
+step: key(alt-right)
+stone: key(alt-left)

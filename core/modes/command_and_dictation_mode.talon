@@ -1,5 +1,6 @@
 mode: command
 mode: dictation
+language: en
 -
 ^(dictation mode|dictate)$:
     mode.disable("sleep")

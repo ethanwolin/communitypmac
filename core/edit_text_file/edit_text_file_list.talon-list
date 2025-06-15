@@ -13,10 +13,7 @@ unix utilities: tags/terminal/unix_utility.talon-list
 abbreviations: settings/abbreviations.csv
 file extensions: settings/file_extensions.csv
 words to replace: settings/words_to_replace.csv
-<<<<<<< HEAD
 
 custom: custom.talon
-=======
 contacts json: private/contacts.json
 contacts csv: private/contacts.csv
->>>>>>> upstream/main

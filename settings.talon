@@ -113,7 +113,7 @@ settings():
 # Enabling this tag will repeat the last command when two pops are heard within the allotted time window
 # Without this tag noise_trigger_pop is usually associated with pop to click actions
 # Enabling this tag disables other pop to click actions in command mode, including pop to click
-tag(): user.pop_twice_to_repeat
+#tag(): user.pop_twice_to_repeat
 
 # Uncomment the below to enable support for saying numbers without a prefix.
 # By default you need to say "numb one" to write "1". If you uncomment this,
