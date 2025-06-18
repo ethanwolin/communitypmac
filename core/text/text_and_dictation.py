@@ -127,7 +127,15 @@ def word(m) -> str:
         )
 
 
-@mod.capture(rule="({user.vocabulary} | <user.prose_contact> | <phrase>)+")
+@mod.capture(rule="(letter | {self.letter}) {self.letter}+")
+def spelled_word(m) -> str:
+    """A single word composed of letters from the Talon alphabet."""
+    return "".join(m.letter_list)
+
+
+@mod.capture(
+    rule="({user.vocabulary} | <user.spelled_word> | <user.prose_contact> | <phrase>)+"
+)
 def text(m) -> str:
     """A sequence of words, including user-defined vocabulary."""
     return format_phrase(m)
@@ -233,14 +241,21 @@ def apply_formatting(m):
         # prose modifiers (cap/no cap/no space) produce formatter callbacks.
         if isinstance(item, Callable):
             item(formatter)
+            continue
+        if isinstance(item, grammar.vm.Phrase):
+            parsed = actions.dictate.parse_words(item)
+            words = actions.dictate.replace_words(parsed)
+            # reformat Whisper output:
+            # 1) remove trailing period/ellipsis if present
+            if parsed[-1][-1] == ".":
+                words[-1] = words[-1].rstrip(".")
+            # 2) lowercase first word if capitalized when Talon wouldn't
+            if actions.dictate.replace_words([parsed[0].lower()])[0] != words[0]:
+                formatter.force_capitalization = "no cap"
         else:
-            words = (
-                actions.dictate.replace_words(actions.dictate.parse_words(item))
-                if isinstance(item, grammar.vm.Phrase)
-                else [item]
-            )
-            for word in words:
-                result += formatter.format(word)
+            words = [item]
+        for word in words:
+            result += formatter.format(word)
     return result
 
 
@@ -362,6 +377,13 @@ def auto_capitalize(text, state=None):
 
 # ---------- DICTATION AUTO FORMATTING ---------- #
 class DictationFormat:
+    __slots__ = (
+        "before",
+        "force_no_space",
+        "force_capitalization",
+        "state",
+    )
+
     def __init__(self):
         self.reset()
 
@@ -390,12 +412,13 @@ class DictationFormat:
         self.force_no_space = False
         if auto_cap:
             text, self.state = auto_capitalize(text, self.state)
-        if self.force_capitalization == "cap":
-            text = format_first_letter(text, lambda s: s.capitalize())
-            self.force_capitalization = None
-        if self.force_capitalization == "no cap":
-            text = format_first_letter(text, lambda s: s.lower())
-            self.force_capitalization = None
+        match self.force_capitalization:
+            case "cap":
+                text = format_first_letter(text, lambda s: s.capitalize())
+                self.force_capitalization = None
+            case "no cap":
+                text = format_first_letter(text, lambda s: s.lower())
+                self.force_capitalization = None
         self.before = text or self.before
         return text
 
